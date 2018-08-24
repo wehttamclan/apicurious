@@ -1,0 +1,7 @@
+<h2>You have <%= @followers.count %> followers.</h2>
+
+<ul>
+<% @followers.each do |follower| %>
+  <li><%= follower.login %></li>
+<% end %>
+</ul>
