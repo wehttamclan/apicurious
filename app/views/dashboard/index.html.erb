@@ -1,8 +1,16 @@
 <h1>Welcome, <%= current_user.name %>!</h1>
 <%= image_tag current_user.image %><br>
 <%= link_to "Logout", logout_path %><br>
+<p>Followers:</p>
 <ul>
-  <% @followers.each do |follower| %>
-    <li> <%= follower.login %> </li>
+  <% @github_user.followers.each do |follower| %>
+    <li><%= link_to follower.login, follower.avatar_url %></li>
+  <% end %>
+</ul>
+
+<p>Repos:</p>
+<ul>
+  <% @github_user.repos.each do |repo| %>
+    <li><%= repo.name %></li>
   <% end %>
 </ul>
